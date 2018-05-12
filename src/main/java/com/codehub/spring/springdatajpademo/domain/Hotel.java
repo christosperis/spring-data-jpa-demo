@@ -43,6 +43,10 @@ public class Hotel implements Serializable {
         this.name = name;
     }
 
+    public Long getId() {
+        return id;
+    }
+
     public City getCity() {
         return this.city;
     }
@@ -57,5 +61,21 @@ public class Hotel implements Serializable {
 
     public String getZip() {
         return this.zip;
+    }
+
+    public Set<Review> getReviews() {
+        return reviews;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Hotel{");
+        sb.append("id=").append(id);
+        sb.append(", city=").append(city);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", address='").append(address).append('\'');
+        sb.append(", zip='").append(zip).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

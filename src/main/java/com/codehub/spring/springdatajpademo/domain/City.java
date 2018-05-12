@@ -34,6 +34,10 @@ public class City implements Serializable {
 		this.country = country;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -52,6 +56,13 @@ public class City implements Serializable {
 
 	@Override
 	public String toString() {
-		return getName() + "," + getState() + "," + getCountry();
+		final StringBuffer sb = new StringBuffer("City{");
+		sb.append("id=").append(id);
+		sb.append(", name='").append(name).append('\'');
+		sb.append(", state='").append(state).append('\'');
+		sb.append(", country='").append(country).append('\'');
+		sb.append(", map='").append(map).append('\'');
+		sb.append('}');
+		return sb.toString();
 	}
 }
